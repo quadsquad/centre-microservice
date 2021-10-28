@@ -118,7 +118,7 @@ public class CentreServiceImpl implements CentreService {
 					formation.getCentre().remove(0);
 					form_rep.save(formation);
 				}*/
-				String formation = restTemplateBuilder.build().getForObject("http://localhost:8099/deleteCentreFromForm/"+id_form, String.class);
+				String formation = restTemplateBuilder.build().getForObject("https://formation-ms-qs.herokuapp.com/deleteCentreFromForm/"+id_form, String.class);
 				return new ResponseEntity<>("Centre deleted successfully and associated: "+formation, HttpStatus.OK);
 			} else {
 				return new ResponseEntity<>("Centre not found", HttpStatus.NOT_FOUND);
