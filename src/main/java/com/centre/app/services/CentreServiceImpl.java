@@ -108,7 +108,7 @@ public class CentreServiceImpl implements CentreService {
 			return new ResponseEntity<>(ex.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
-	//delete centre
+	//delete centre as well as its formation
 	public ResponseEntity<?> deleteCentre(String id_centre, String id_form) {
 		try {
 			if (centre_rep.findById(id_centre).isPresent()) {
